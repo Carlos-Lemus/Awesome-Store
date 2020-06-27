@@ -90,59 +90,8 @@
   </head>
 
   <body>
-    <div class="container-fluid bg-light fixed-top py-3">
-      <div class="container">
-        <nav class="navbar text-center navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            <img src="img/logo.png" alt="logotipo" class="img-fluid" />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
 
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-item nav-link" href="#"
-                  ><i class="fas fa-home"></i> Inicio</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-item nav-link" href="#"
-                  ><i class="fas fa-mobile"></i> Telefonos</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-item nav-link" href="#">
-                  <i class="fas fa-tablet-alt"></i> Tablets</a
-                >
-              </li>
-              <li class="nav-item">
-                <a title="Sign in" class="nav-item nav-link" href="#">
-                  <i class="fas fa-laptop"></i>
-                  Computadoras
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="text-primary nav-item nav-link" href="#">
-                  <i class="fas fa-sign-in-alt"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </div>
-    </div>
-    <!-- fin del container -->
-
+  <?php include "header.php" ?>
     <section class="slider">
       <div class="content-center">
         <h1>¿Aún no te has Registrado?</h1>
@@ -340,50 +289,7 @@
       </div>
     </section>
 
-    <section style="background-color: #1a1a1a;" class="mt-5">
-      <div class="container">
-        <div class="mx-auto py-5 text-center">
-          <figure class="logo">
-            <img src="img/logo.png" class="mx-auto rounded-pill img-fluid" />
-          </figure>
-          <ul class="list-inline enlaces py-4">
-            <li class="list-inline-item footer-menu">
-              <a href="#">Inicio</a>
-            </li>
-            <li class="list-inline-item footer-menu">
-              <a href="#">Productos</a>
-            </li>
-            <li class="list-inline-item footer-menu">
-              <a href="#">Contatc</a>
-            </li>
-          </ul>
-
-          <ul class="list-inline">
-            <li class="list-inline-item">
-              <a href="#" class="text-white"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
-            </li>
-          </ul>
-
-          <small class="text-white"
-            >&copy2019 All Rights Reserved Created by Themes Boostrap</small
-          >
-        </div>
-      </div>
-    </section>
+    <?php include "footer.php" ?>    
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>

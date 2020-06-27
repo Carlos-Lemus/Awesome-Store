@@ -1,0 +1,63 @@
+.nav-link {
+    margin: 10px;
+}
+
+.product {
+    margin-top: 100px;
+}
+
+.frases {
+    max-width: 700px;
+    text-align: center;
+    padding: 40px 0;
+    margin: auto;
+}
+
+.frases h1 {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+.slider {
+    min-height: 650px;
+    background-image: url("./img/bg-3.png");
+    background-size: cover;
+}
+
+.content-center {
+    max-width: 600px;
+    margin: auto;
+    color: white;
+    text-align: center;
+    padding: 165px 0;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.content-center h1 {
+    font-weight: 800;
+    font-size: 50px;
+}
+
+.content-center p {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+.enlaces .list-inline-item>a {
+    text-decoration: none;
+    color: white;
+    /* font-size: 18px;     */
+    margin: 0 10px;
+}
+
+.enlaces .list-inline-item>a:hover {
+    font-size: 18px;
+}
+
+.center-image {
+    display: flex;
+    align-items: center;
+}
