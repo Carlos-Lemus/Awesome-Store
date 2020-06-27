@@ -1,7 +1,7 @@
 <div class="container-fluid bg-light fixed-top py-3">
     <div class="container">
         <nav class="navbar text-center navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="img/logo.png" alt="logotipo" class="img-fluid" />
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +27,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="text-primary nav-item nav-link" href="#">
-                            <i class="fas fa-sign-in-alt"></i></a>
+                        <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </a>
                     </li>
                 </ul>
             </div>

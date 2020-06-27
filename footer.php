@@ -2,17 +2,19 @@
     <div class="container">
         <div class="mx-auto py-5 text-center">
             <figure class="logo">
-                <img src="img/logo.png" class="mx-auto rounded-pill img-fluid" />
+                <a href="index.php">
+                    <img src="img/logo.png" class="mx-auto rounded-pill img-fluid" />
+                </a>
             </figure>
             <ul class="list-inline enlaces py-4">
                 <li class="list-inline-item footer-menu">
-                    <a href="#">Inicio</a>
+                    <a href="index.php">Inicio</a>
                 </li>
                 <li class="list-inline-item footer-menu">
-                    <a href="#">Productos</a>
+                    <a href="productos.php">Productos</a>
                 </li>
                 <li class="list-inline-item footer-menu">
-                    <a href="#">Contatc</a>
+                    <a href="contacto.php">Contatc</a>
                 </li>
             </ul>
 
