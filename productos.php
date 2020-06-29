@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -95,19 +97,34 @@
 <body>
 
   <?php include "header.php" ?>
-  <section class="slider">
-    <div class="content-center">
-      <h1>¿Aún no te has Registrado?</h1>
-      <p>
-        Regístrate para mantenerte al tanto de todos nuestros productos y de
-        nuestras ofertas exclusivas por tiempo limitado, no te los pierdas
-        <br />!Regístrate ahora¡
-      </p>
-      <button class="btn btn-lg btn-danger" type="button" data-toggle="modal" data-target="#staticBackdrop">
-        Regístrate
-      </button>
-    </div>
-  </section>
+
+  <?php if (isset($_SESSION['admin'])) : ?>
+    <section class="slider">
+      <div class="content-center">
+        <h1>Siente la calidad de Nuestros Productos</h1>
+        <h2 class="mt-3"> Te damos un vistazo de lo que ofrece de <span class="font-weight-bold">Amazing Store</span>
+          <br>
+          <span class="font-weight-bolder mt-4 badge badge-danger ">Mira lo que tenemos para ti</span>
+        </h2>
+      </div>
+    </section>
+  <?php endif ?>
+
+  <?php if (!isset($_SESSION['admin'])) : ?>
+    <section class="slider">
+      <div class="content-center">
+        <h1>¿Aún no te has Registrado?</h1>
+        <p>
+          Regístrate para mantenerte al tanto de todos nuestros productos y de
+          nuestras ofertas exclusivas por tiempo limitado, no te los pierdas
+          <br />!Regístrate ahora¡
+        </p>
+        <button class="btn btn-lg btn-danger" type="button" data-toggle="modal" data-target="#staticBackdrop">
+          Regístrate
+        </button>
+      </div>
+    </section>
+  <?php endif ?>
 
   <section class="container product">
     <div class="frases">
@@ -131,7 +148,7 @@
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
-                <a href="#" class="btn btn-primary btn-block">Ver más</a>
+                <a href="telefonos.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
             </div>
           </div>
@@ -155,7 +172,7 @@
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
-                <a href="#" class="btn btn-primary btn-block">Ver más</a>
+                <a href="telefonos.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
             </div>
           </div>
@@ -184,7 +201,7 @@
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
-                <a href="#" class="btn btn-primary btn-block">Ver más</a>
+                <a href="tablets.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
             </div>
           </div>
@@ -207,7 +224,7 @@
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
-                <a href="#" class="btn btn-primary btn-block">Ver más</a>
+                <a href="tablets.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
             </div>
           </div>
@@ -236,7 +253,7 @@
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
-                <a href="#" class="btn btn-primary btn-block">Ver más</a>
+                <a href="computadoras.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
             </div>
           </div>
@@ -259,7 +276,7 @@
                 <p class="card-text">
                   <small class="text-muted">Last updated 3 mins ago</small>
                 </p>
-                <a href="#" class="btn btn-primary btn-block">Ver más</a>
+                <a href="computadoras.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
             </div>
           </div>
@@ -276,38 +293,8 @@
   <script src="js/jquery-3.5.1.min.js"></script>
   <script src="css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $('#registro').click(function(e) {
-        e.preventDefault();
-        $('#collapseExample').removeClass('show');
-        $('.modal-header').css({
-          background: 'red',
-          color: 'white'
-        });
-        $('.modal-title').text('Regístrate');
-      });
-
-      $('#iniciar').click(function(e) {
-        e.preventDefault();
-        $('.modal-title').text('Iniciar Sesión');
-        $('.modal-header').css({
-          background: 'blue',
-          color: 'white'
-        });
-      });
-
-      $('#login').click(function(e) {
-        e.preventDefault();
-        $('#collapseExample2').removeClass('show');
-        $('.modal-header').css({
-          background: 'blue',
-          color: 'white'
-        });
-      });
-    });
-  </script>
+  <script src="js/app.js"></script>
+  
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

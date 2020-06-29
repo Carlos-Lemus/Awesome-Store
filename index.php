@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -53,11 +55,22 @@
               <a class="nav-item nav-link" href="contacto.php">
                 <i class="fas fa-address-book"></i> Contactenos</a>
             </li>
-            <li class="nav-item">
-              <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
-                <i class="fas fa-sign-in-alt"></i>
-              </a>
-            </li>
+
+            <?php if (isset($_SESSION['admin'])) : ?>
+              <li class="nav-item">
+                <a title="Logout" class="nav-item nav-link text-danger" href="cerrar.php">
+                <i class="fas fa-sign-out-alt"></i>
+                </a>
+              </li>
+            <?php endif ?>
+
+            <?php if (!isset($_SESSION['admin'])) : ?>
+              <li class="nav-item">
+                <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
+                  <i class="fas fa-sign-in-alt"></i>
+                </a>
+              </li>
+            <?php endif ?>
           </ul>
         </div>
       </nav>
@@ -174,14 +187,14 @@
         <div class="row pt-3">
           <div class="col-md-3">
             <div class="form-group">
-              <input type="text" class="form-control form-control-lg" placeholder="Ingresa tu nombre" />
+              <input type="text" name="username" class="form-control form-control-lg" placeholder="Ingresa tu nombre" />
             </div>
           </div>
           <div class="col-md-3">
-            <input type="email" class="form-control form-control-lg" placeholder="Ingresa tu email" />
+            <input type="email" name="email" class="form-control form-control-lg" placeholder="Ingresa tu email" />
           </div>
           <div class="col-md-3">
-            <input type="password" class="form-control form-control-lg" placeholder="Ingresa contraseña" />
+            <input type="password" name="contraseña" class="form-control form-control-lg" placeholder="Ingresa contraseña" />
           </div>
           <div class="col-md-3">
             <input type="submit" value="Enviar" class="btn btn-success btn-block btn-lg" />
@@ -265,24 +278,33 @@
   <script src="js/main.js"></script>
 
   <script>
-    $(document).ready(function () {
-      $('#registro').click(function (e) { 
-        e.preventDefault();        
+    $(document).ready(function() {
+      $('#registro').click(function(e) {
+        e.preventDefault();
         $('#collapseExample').removeClass('show');
-        $('.modal-header').css({background: 'red', color: 'white'});        
+        $('.modal-header').css({
+          background: 'red',
+          color: 'white'
+        });
         $('.modal-title').text('Regístrate');
       });
-      
-      $('#iniciar').click(function (e) { 
+
+      $('#iniciar').click(function(e) {
         e.preventDefault();
         $('.modal-title').text('Iniciar Sesión');
-        $('.modal-header').css({background: 'blue', color: 'white'});
+        $('.modal-header').css({
+          background: 'blue',
+          color: 'white'
+        });
       });
 
-      $('#login').click(function (e) { 
-        e.preventDefault();        
+      $('#login').click(function(e) {
+        e.preventDefault();
         $('#collapseExample2').removeClass('show');
-        $('.modal-header').css({background: 'blue', color: 'white'});
+        $('.modal-header').css({
+          background: 'blue',
+          color: 'white'
+        });
       });
     });
   </script>

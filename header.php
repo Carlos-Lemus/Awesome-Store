@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid bg-light fixed-top py-3">
     <div class="container">
         <nav class="navbar text-center navbar-expand-lg navbar-light bg-light">
@@ -26,11 +28,22 @@
                             Computadoras
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
-                            <i class="fas fa-sign-in-alt"></i>
-                        </a>
-                    </li>
+                    <?php if (isset($_SESSION['admin'])) : ?>
+                        <li class="nav-item">
+                            <a href="cerrar.php" class="text-danger nav-item nav-link" title="Cerrar Sesión">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </li>
+                    <?php endif ?>
+
+                    <?php if (!isset($_SESSION['admin'])) : ?>
+                        <li class="nav-item">
+                            <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </a>
+                        </li>
+                    <?php endif ?>
+
                 </ul>
             </div>
         </nav>

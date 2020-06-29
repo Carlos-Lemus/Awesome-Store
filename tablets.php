@@ -1,3 +1,5 @@
+<?php session_start() ?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -88,12 +90,14 @@
         </div>
     </div>
     <?php include "footer.php" ?>
+    <?php include "registro.php" ?>
 
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
