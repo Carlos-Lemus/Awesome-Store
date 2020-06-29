@@ -67,7 +67,7 @@
             <?php if (!isset($_SESSION['admin'])) : ?>
               <li class="nav-item">
                 <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
-                  <i class="fas fa-sign-in-alt"></i>
+                  <i class="fas fa-sign-in-alt">Iniciar Sesion</i>
                 </a>
               </li>
             <?php endif ?>
@@ -100,10 +100,10 @@
           Elige la mejor calidad
         </h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          iusto excepturi ipsum, minus et quis aliquid repellendus esse
-          similique deleniti alias dolorem suscipit doloremque necessitatibus
-          dolor placeat natus eos laudantium.
+            Somos una empresa dedicada a la tecnologia, por eso queremos
+            ofrecerte la mejor calidad a precios accesibles.
+            Puedes visitar nuestra página de productos para visualizar a
+            detalle todos los productos que podemos ofrecerte.
         </p>
       </div>
     </div>
@@ -138,7 +138,7 @@
               <div class="carousel-item active">
                 <img src="img/img_slider1.jpeg" class="d-block w-100" alt="..." />
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>First slide label</h5>
+                  <h5>Productos Nuevos</h5>
                   <p>
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
                   </p>
@@ -147,7 +147,7 @@
               <div class="carousel-item">
                 <img src="img/img_slider2.jpeg" class="d-block w-100" alt="..." />
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Second slide label</h5>
+                  <h5>Los Mejores precios</h5>
                   <p>
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
                   </p>
@@ -156,7 +156,7 @@
               <div class="carousel-item">
                 <img src="img/img_slider3.jpeg" class="d-block w-100" alt="..." />
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Third slide label</h5>
+                  <h5>Las Mejores Ofertas</h5>
                   <p>
                     Nulla vitae elit libero, a pharetra augue mollis interdum.
                   </p>
@@ -222,7 +222,7 @@
               <li>Ipad</li>
               <li>Samsung</li>
             </ul>
-            <a href="tablets.php" class="btn btn-primary btn-block">Ver más</a>
+            <a href="productos.php #tablets" class="btn btn-primary btn-block">Ver más</a>
           </div>
         </div>
       </div>
@@ -242,7 +242,7 @@
               <li>Lenovo</li>
               <li>Dell</li>
             </ul>
-            <a href="computadoras.php" class="btn btn-primary btn-block">Ver más</a>
+            <a href="productos.php #laptops" class="btn btn-primary btn-block">Ver más</a>
           </div>
         </div>
       </div>
@@ -262,7 +262,7 @@
               <li>Apple</li>
               <li>Xiomi</li>
             </ul>
-            <a href="telefonos.php" class="btn btn-primary btn-block">Ver más</a>
+            <a href="productos.php #telefonos" class="btn btn-primary btn-block">Ver más</a>
           </div>
         </div>
       </div>

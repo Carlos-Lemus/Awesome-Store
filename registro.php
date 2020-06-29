@@ -5,12 +5,12 @@ if ($_POST) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $contraseña = $_POST['contraseña'];
-
+    $_tipo = 1;
     $contraseña = password_hash($contraseña, PASSWORD_DEFAULT);
 
-    $sql_agregar = 'INSERT INTO usuarios(username, email, contraseña) VALUES(?, ?, ?)';
+    $sql_agregar = 'INSERT INTO usuarios(username, email, contraseña, tipo) VALUES(?, ?, ?, ?)';
     $agregar = $pdo->prepare($sql_agregar);
-    $agregar->execute(array($username, $email, $contraseña));    
+    $agregar->execute(array($username, $email, $contraseña, $_tipo));
 
     $agregar = null;
     $pdo = null;

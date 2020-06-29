@@ -96,7 +96,9 @@
 
 <body>
 
-  <?php include "header.php" ?>
+  <?php include "header.php";
+        include "conexion.php";
+  ?>
 
   <?php if (isset($_SESSION['admin'])) : ?>
     <section class="slider">
@@ -127,161 +129,115 @@
   <?php endif ?>
 
   <section class="container product">
-    <div class="frases">
+    <div class="frases" id = "telefonos">
       <h1>Teléfonos</h1>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4 center-image">
-              <img src="https://falabella.scene7.com/is/image/FalabellaCO/3820957_1?q=i?wid=800&hei=800&qlt=70" class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Samsung Galaxy S10</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <a href="telefonos.php" class="btn btn-primary btn-block">Ver más</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters card-deck">
-            <div class="col-md-4 center-image">
-              <img src="https://samsungmx.vteximg.com.br/arquivos/ids/160779-600-600/SM-N975FZKDACR-2000_1.jpg?v=637030332057570000" class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Sansung Galaxy Note10</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <a href="telefonos.php" class="btn btn-primary btn-block">Ver más</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+            $stmt = $pdo->prepare("SELECT *  FROM productos WHERE categoriaP = 1");
+                     $stmt->execute();
+                    while ($row = $stmt->fetch()){
+                       $imagen = 'img/'.$row["nombreimagenP"];
+                       echo '<div class="col-md-6">
+                         <div class="card mb-3" style="max-width: 540px;">
+                           <div class="row no-gutters">
+                             <div class="col-md-4 center-image">
+                               <img src="'.$imagen.'" class="card-img" alt="..." />
+                             </div>
+                             <div class="col-md-8">
+                               <div class="card-body">
+                                <h5 class="card-title">'.$row["nombreP"].'</h5>
+                                <p class="card-text">'.$row["descripcionP"].'</p>
+                                <p class="card-text">
+                                  <small class="text-muted">Modelo: '.$row["modeloP"].'</small><br>
+                                  <small class="text-muted">Precio: '.$row["precioP"].'</small><br>
+                                  <small class="text-muted">Stock: '.$row["stockP"].'</small>
+                                </p>
+                                <a href="#" class="btn btn-primary btn-block">Agregar al Carrito</a>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>';
+                              }
+
+                    ?>
     </div>
 
-    <div class="frases">
+    <div class="frases" id = "tablets">
       <h1>Tablets</h1>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4 center-image">
-              <img src="https://images.samsung.com/is/image/samsung/nz-galaxy-tab-a-2019-101-sm-t510nzsdxnz-frontsilver-thumb-162007695" class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Galaxy Tab A10</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <a href="tablets.php" class="btn btn-primary btn-block">Ver más</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4 center-image">
-              <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-select-201911_FMT_WHH?wid=2000&amp;hei=2000&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1573800147324" class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Apple Ipad Air</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <a href="tablets.php" class="btn btn-primary btn-block">Ver más</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <?php
+
+    $stmt = $pdo->prepare("SELECT *  FROM productos WHERE categoriaP = 2");
+
+             $stmt->execute();
+
+            while ($row = $stmt->fetch()){
+         $imagen = 'img/'.$row["nombreimagenP"];
+         echo '<div class="col-md-6">
+           <div class="card mb-3" style="max-width: 540px;">
+             <div class="row no-gutters">
+               <div class="col-md-4 center-image">
+                 <img src="'.$imagen.'" class="card-img" alt="..." />
+               </div>
+               <div class="col-md-8">
+                 <div class="card-body">
+                  <h5 class="card-title">'.$row["nombreP"].'</h5>
+                  <p class="card-text">'.$row["descripcionP"].'</p>
+                  <p class="card-text">
+                    <small class="text-muted">Modelo: '.$row["modeloP"].'</small><br>
+                    <small class="text-muted">Precio: '.$row["precioP"].'</small><br>
+                    <small class="text-muted">Stock: '.$row["stockP"].'</small>
+                  </p>
+                  <a href="#" class="btn btn-primary btn-block">Agregar al Carrito</a>
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </div>';
+        }
+
+      ?>
     </div>
 
-    <div class="frases">
+    <div class="frases" id = "laptops">
       <h1>Computadoras</h1>
     </div>
     <div class="row">
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4 center-image">
-              <img src="https://www.cqnetcr.com/74964-large_default/laptop-lenovo-ideapad-s340-156-ryzen-5-8gb-2tb.jpg" class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Laptop Lenovo Ideapad S430</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <a href="computadoras.php" class="btn btn-primary btn-block">Ver más</a>
+      <?php
+      $stmt = $pdo->prepare("SELECT *  FROM productos WHERE categoriaP = 3");
+
+               $stmt->execute();
+
+              while ($row = $stmt->fetch()){
+     $imagen = 'img/'.$row["nombreimagenP"];
+     echo '<div class="col-md-6">
+       <div class="card mb-3" style="max-width: 540px;">
+         <div class="row no-gutters">
+           <div class="col-md-4 center-image">
+             <img src="'.$imagen.'" class="card-img" alt="..." />
+           </div>
+           <div class="col-md-8">
+             <div class="card-body">
+              <h5 class="card-title">'.$row["nombreP"].'</h5>
+              <p class="card-text">'.$row["descripcionP"].'</p>
+              <p class="card-text">
+                <small class="text-muted">Modelo: '.$row["modeloP"].'</small><br>
+                <small class="text-muted">Precio: '.$row["precioP"].'</small><br>
+                <small class="text-muted">Stock: '.$row["stockP"].'</small>
+              </p>
+              <a href="#" class="btn btn-primary btn-block">Agregar al Carrito</a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
-          <div class="row no-gutters">
-            <div class="col-md-4 center-image">
-              <img src="https://media.nidux.net/pull/599/800/3310/123114-product-5e1657ea2bd97-nbhp6qw11la-1.jpg" class="card-img" alt="..." />
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title">Laptop Portatil Hp 14</h5>
-                <p class="card-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content. This content is a little bit
-                  longer.
-                </p>
-                <p class="card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-                <a href="computadoras.php" class="btn btn-primary btn-block">Ver más</a>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              </div>
+              </div>
+              </div>';
+    }
+
+  ?>
     </div>
   </section>
 
@@ -294,7 +250,7 @@
   <script src="css/bootstrap-4.5.0/js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/app.js"></script>
-  
+
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

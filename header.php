@@ -16,14 +16,14 @@
                         <a class="nav-item nav-link" href="index.php"><i class="fas fa-home"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="telefonos.php"><i class="fas fa-mobile"></i> Telefonos</a>
+                        <a class="nav-item nav-link" href="productos.php #telefonos"><i class="fas fa-mobile"></i> Telefonos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-item nav-link" href="tablets.php">
+                        <a class="nav-item nav-link" href="productos.php #tablets">
                             <i class="fas fa-tablet-alt"></i> Tablets</a>
                     </li>
                     <li class="nav-item">
-                        <a title="Sign in" class="nav-item nav-link" href="computadoras.php">
+                        <a title="Sign in" class="nav-item nav-link" href="productos.php #laptops">
                             <i class="fas fa-laptop"></i>
                             Computadoras
                         </a>
@@ -38,8 +38,8 @@
 
                     <?php if (!isset($_SESSION['admin'])) : ?>
                         <li class="nav-item">
-                            <a id="iniciar" title="Sign in" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
-                                <i class="fas fa-sign-in-alt"></i>
+                            <a id="iniciar" title="Iniciar Sesion" class="text-primary nav-item nav-link" href="#" data-toggle="modal" data-target="#staticBackdrop">
+                                <i class="fas fa-sign-in-alt">Iniciar Sesion</i>
                             </a>
                         </li>
                     <?php endif ?>
