@@ -232,7 +232,7 @@
                          if (mysqli_query($conn, $sql)) {
 
                           // $URL="http://localhost/Awesome-Store-master/productos.php";
-                             $URL="http://localhost/Awesome/AdministrarProductos.php";
+                             $URL="http://localhost/Awesome-Store/AdministrarProductos.php";
 
                            echo "<script type='text/javascript'>document.location.href='{$URL}';</script>";
                            echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $URL . '">';

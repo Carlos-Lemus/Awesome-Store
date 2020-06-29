@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-06-2020 a las 18:47:18
+-- Tiempo de generación: 29-06-2020 a las 19:16:22
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.5
 
@@ -83,7 +83,7 @@ INSERT INTO `productos` (`id`, `nombreP`, `descripcionP`, `modeloP`, `categoriaP
 --
 
 CREATE TABLE `tipodeproducto` (
-  `idTipo` int(11) NOT NULL,
+  `categoriaP` int(11) NOT NULL,
   `tipo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -91,7 +91,7 @@ CREATE TABLE `tipodeproducto` (
 -- Volcado de datos para la tabla `tipodeproducto`
 --
 
-INSERT INTO `tipodeproducto` (`idTipo`, `tipo`) VALUES
+INSERT INTO `tipodeproducto` (`categoriaP`, `tipo`) VALUES
 (1, 'Telefonos'),
 (2, 'Tablets'),
 (3, 'Computadoras');
@@ -129,7 +129,14 @@ INSERT INTO `usuarios` (`id`, `username`, `email`, `contraseña`, `tipo`) VALUES
 -- Indices de la tabla `productos`
 --
 ALTER TABLE `productos`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `categoriaq` (`categoriaP`);
+
+--
+-- Indices de la tabla `tipodeproducto`
+--
+ALTER TABLE `tipodeproducto`
+  ADD PRIMARY KEY (`categoriaP`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -145,13 +152,23 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`categoriaP`) REFERENCES `tipodeproducto` (`categoriaP`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
